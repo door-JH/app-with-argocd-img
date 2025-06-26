@@ -60,7 +60,7 @@ jobs:
     
     - name: Set up Image
       run: |
-        sed -i "s%image: app-with-argocd-img%image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:${{ github.sha }}%" ./argocd-deployment.yaml
+        sed -i "s%image: app-with-argocd-img%image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:${{ github.sha }}%" ./manifest/argocd-deployment.yaml
         
   # cd:
   #   runs-on: ubuntu-latest
