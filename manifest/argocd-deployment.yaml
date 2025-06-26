@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: 
-        image: elogio/app-with-argocd-img:34d54454a31c48847166d91875c081fe8d613d18
+        image: elogio/app-with-argocd-img:88be8d3c583648f1e8c2f0d48b29745b8a828973
