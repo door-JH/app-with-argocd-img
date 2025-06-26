@@ -72,8 +72,8 @@ jobs:
        sed -i "s%image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:[a-f0-9]%image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:${{ github.sha }}%" ./manifest/argocd-deployment.yaml
     - name: Commit and push updated manifest
       run: |
-        git config user.name "github-actions"
-        git config user.email "actions@github.com"
+        git config user.name "door-jh"
+        git config user.email "elogio.mi@gmail.com"
         git add .
         git commit -m "Update image tag to ${{ github.sha }}"
         git push origin main
