@@ -5,4 +5,3 @@ images:
   - name: argocd-img-container
     newName: elogio/app-with-argocd-img
     newTag: "77f7f8b"
-    imagePullPolicy: Always
