@@ -1,6 +1,6 @@
 resources:
-  - argocd-img-deployment.yaml
-  - argocd-img-service.yaml
+  - argocd-deployment.yaml
+  - argocd-service.yaml
 images:
   - name: argocd-img-container
     newName: elogio/app-with-argocd-img
