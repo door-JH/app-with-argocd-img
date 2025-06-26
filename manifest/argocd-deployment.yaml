@@ -15,3 +15,4 @@ spec:
       containers:
       - name: argocd-img-container
         image: elogio/app-with-argocd-img:0b079cc
+        imagePullPolicy: Always
