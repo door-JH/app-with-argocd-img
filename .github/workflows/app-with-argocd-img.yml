@@ -78,8 +78,6 @@ jobs:
     
     - name: Set up Image
       run: |
-        pwd
-        chmod -R 775 .
         sed -i "s%image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:[a-f0-9]\+%image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:${{ env.SHORT_SHA }}%" ./manifest/argocd-deployment.yaml
 
     - name: Commit and push changes
@@ -87,5 +85,5 @@ jobs:
         git config --local user.email "elogio.mi@gmail.com"
         git config --local user.name "door-JH"
         git add .
-        git commit -m "Update nginx image to latest"
+        git commit -m "Update nginx image to latest" || true
         git push
