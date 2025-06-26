@@ -13,5 +13,5 @@ spec:
         app.kubernetes.io/name: argocd-web-img
     spec:
       containers:
-      - name: 
+      - name: argocd-img-container
         image: elogio/app-with-argocd-img:88be8d3c583648f1e8c2f0d48b29745b8a828973
