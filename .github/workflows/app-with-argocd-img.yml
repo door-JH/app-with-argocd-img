@@ -69,8 +69,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
+        repository: door-JH/aws-with-argocd-img-manifes
         ref: main
         token: ${{ secrets.TOKEN }}
+        path: manifest
         
     - name: Set SHORT_SHA env
       run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
