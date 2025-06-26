@@ -69,7 +69,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        repository: ${{ secrets.GH_USERNAME }}/${{ secrets.GH_REPOSITORY }}
+        # repository: ${{ secrets.GH_USERNAME }}/${{ secrets.GH_REPOSITORY }}
         ref: main
         token: ${{ secrets.TOKEN }}
         
