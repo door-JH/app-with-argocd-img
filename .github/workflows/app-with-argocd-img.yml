@@ -69,7 +69,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        repository: door-JH/aws-with-argocd-img-manifes
+        repository: door-JH/aws-with-argocd-img-manifest
         ref: main
         token: ${{ secrets.TOKEN }}
         path: manifest
