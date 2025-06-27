@@ -10,10 +10,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      # with:
+      with:
       #   repository: ${{ secrets.GH_USERNAME }}/${{ secrets.GH_REPOSITORY }}
       #   ref: main
-      #   token: ${{ secrets.TOKEN }}
+        token: ${{ secrets.TOKEN }}
         
     - name: Set up JDK 17
       uses: actions/setup-java@v4
