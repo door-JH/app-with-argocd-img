@@ -1,4 +1,3 @@
-# argocd-db.yaml
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -7,13 +6,14 @@ metadata:
     type: local
 spec:
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   capacity:
-    storage: 500Mi
+    storage: 50Mi
   persistentVolumeReclaimPolicy: Retain
   storageClassName: db-storage
   hostPath:
-    path: 
+    path: /mnt/data/mysql             
+    type: DirectoryOrCreate          
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -21,10 +21,10 @@ metadata:
   name: db-pvc
 spec:
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 30Mi
+      storage: 10Mi
   storageClassName: db-storage
 ---
 apiVersion: v1
@@ -58,7 +58,7 @@ spec:
     spec:
       containers:
         - name: mysql-container
-          image: mysql
+          image: mysql:8.0                           
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3306
@@ -66,9 +66,9 @@ spec:
             - name: MYSQL_ROOT_PASSWORD
               value: k8s12345
           volumeMounts:
-            - mountPath: 
-              name: 
+            - mountPath: /var/lib/mysql             
+              name: db-storage
       volumes:
-        - name: 
+        - name: db-storage
           persistentVolumeClaim:
-            claimName: 
+            claimName: db-pvc                       
