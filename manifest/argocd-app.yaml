@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: argocd-app-container
-        image: elogio/app-with-argocd-img:4933dd3
+        image: elogio/app-with-argocd-img:77b313d0ddea93b0434a53f4c70865c11ce41be8
         ports:
           - protocol: TCP
             containerPort: 8080
